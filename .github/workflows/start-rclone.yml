@@ -9,4 +9,4 @@ jobs:
         run: |
            . "V:\Scripts\Functions\Start-RcloneSync.ps1"
            Start-RcloneSync
-        shell: pwsh -NoProfile
+        shell: pwsh
