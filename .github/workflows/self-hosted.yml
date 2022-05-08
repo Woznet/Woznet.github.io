@@ -1,0 +1,19 @@
+name: Run simple selfhosted shell
+on: [push]
+
+jobs:
+  windows_run:
+    name: My selfhosted run
+    runs-on: self-hosted
+    steps:
+      - name: Basic PowerShell commands 
+        env: 
+          MY_NAME: John Smith  
+        run: |
+           Get-Date
+           & HOSTNAME.EXE
+           Write-Output $env:MY_NAME
+           Write-Output $env:COMPUTERNAME
+           Write-Output $env:USERNAME
+           Write-Output $env:USERPROFILE
+        shell: powershell 
