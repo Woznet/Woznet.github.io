@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: RcloneSync Seedbox to Emby Server
         run: |
-           Get-Date | Out-File D:\Get-Date-TESTING.txt
            . "V:\Scripts\Functions\Start-RcloneSync.ps1"
            Start-RcloneSync
         shell: pwsh
