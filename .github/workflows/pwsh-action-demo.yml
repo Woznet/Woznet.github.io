@@ -1,10 +1,29 @@
-name: How to use a Windows Runner on GitHub Actions
-on: push
+name: Run simple shell
+on: [push]
+
 jobs:
-  build:
-    runs-on: windows-2019
+
+  linux_run:
+    name: My first run
+    runs-on: ubuntu-latest
     steps:
-      - name: Check out repo        
-        uses: actions/checkout@v2
-      - run: |
-          ./myscript.ps1
+      - name: Basic Bash shell command
+        env:
+          MYNAME: John
+        run: |
+         date
+         uname 
+         echo $MYNAME
+        shell: bash 
+  
+  windows_run:
+    name: My second run
+    runs-on: windows-latest
+    steps:
+      - name: Basic PowerShell commands 
+        env: 
+          MY_NAME: John Smith  
+        run: |
+           Get-Date
+           Write-Output $env:MY_NAME
+        shell: powershell 
