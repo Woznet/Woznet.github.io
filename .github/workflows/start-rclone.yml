@@ -1,12 +1,12 @@
 name: Run RcloneSync
-on: [push]
+on: workflow_dispatch
 jobs:
-  windows_run:
+  tester_run:
     name: Start-RcloneSync
     runs-on: self-hosted
     steps:
-      - name: RcloneSync Seedbox to Emby Server
+      - name: Test Pwsh
         run: |
-           . "V:\Scripts\Functions\Start-RcloneSync.ps1"
-           Start-RcloneSync
+           Get-Variable
+           
         shell: pwsh
